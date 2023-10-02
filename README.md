@@ -2,4 +2,4 @@
 
 initial repository for COPM-1711 materail
 
-Author:Eason shi
+Author:XUhui shi
