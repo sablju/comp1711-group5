@@ -3,7 +3,7 @@
 int main() {
    int mark;
     printf ("Enter the mark: \n");
-    scanf ("%d", &mark);
+    scanf ("%d",&mark);
     if (mark == 0)
     {
         printf ("The mark of %d is zero\n", mark);
