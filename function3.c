@@ -7,10 +7,9 @@ float sum (int a, int b)
     return answer;
 }
 
-int main () 
+int main ()
 {
     int y = 2;
-    float z = sum(5, y); // calling our new function
-
-    printf ("The sum of 5 and %d is %d\n", y, z);
+    float z = sum (5,y); // calling our new function
+   printf("The sum of 5 and %df is %f\n", y, z);
 }
