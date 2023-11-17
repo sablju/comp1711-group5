@@ -114,12 +114,13 @@ int main()
                 //split up the line and store it in the right place
                 //using the & operate to pass in a pointer to the bloodIron so it stores it
                 tokeniseRecord(line,",", daily_readings[counter].date, &daily_readings[counter].bloodIron);
-                    min = daily_readings[counter].bloodIron;
-                }
-
+                min = daily_readings[counter].bloodIron;
                 counter++;
+
             }
-            float lowest = min ;
+
+            
+            float lowest = min;
             printf("Your lowest blood iron was %.2f\n",lowest);
             fclose(input);
         
@@ -127,8 +128,23 @@ int main()
 
         case 'E':
         case 'e':
-            return 0;
-            break;
+            counter = 0;
+            int month;
+            FILE *file = fopen(filename, "r");
+            if (file == NULL) {
+            perror("");
+            return 1;
+        }
+            printf("View the blood iron levels for a specific month");
+            scanf("%d",&month);
+            printf("The month you want to view is %d/n",month);
+            char line_buffer[buffer_size];
+            while (fgets(line_buffer, buffer_size, file) != NULL) {
+            printf("%d\n", atoi(line_buffer));
+        }
+                  
+        fclose(input);
+        break;
 
         case 'F':
         case 'f':
@@ -145,6 +161,7 @@ int main()
             return 0;
             break;
 
+        
         // if they type anything else:
         default:
             printf("Invalid choice\n");
